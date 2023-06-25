@@ -17,6 +17,9 @@ spec:
       - image: ShiquanLi/jenkins-demo:<BUILD_TAG>
         imagePullPolicy: IfNotPresent
         name: jenkins-demo
+        ports:
+        - name: http
+          containerPort：80
         env:
         - name: branch
           value: <BRANCH_NAME>
