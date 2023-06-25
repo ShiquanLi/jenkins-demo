@@ -23,3 +23,18 @@ spec:
         env:
         - name: branch
           value: <BRANCH_NAME>
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+   name: demo
+   namespace: devlopment
+spec:
+   selector:
+     app: jenkins-demo
+   type: NodePort
+   ports:
+   - port: 18888
+     targetPort: 18888
+     nodePort: 31889
