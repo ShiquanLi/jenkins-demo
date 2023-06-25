@@ -1,9 +1,9 @@
-FROM golang:1.8.0-alpine
+FROM nginx:latest
 
-ADD . /go/src/app
+COPY nginx.conf /etc/nginx/nginx.conf
 
-WORKDIR /go/src/app
+COPY index.html /usr/share/nginx/html/index.html
 
-RUN GOOS=linux GOARCH=386 go build -v -o /go/src/app/jenkins-app
+EXPOSE 80
 
-CMD ["./jenkins-app"]
+CMD ["nginx", "-g", "daemon off;"]
