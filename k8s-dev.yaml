@@ -18,8 +18,8 @@ spec:
         imagePullPolicy: IfNotPresent
         name: jenkins-demo
         ports:
-        - name: http
-          containerPort：80
+        - containerPort：80
+          name: http
         env:
         - name: branch
           value: <BRANCH_NAME>
